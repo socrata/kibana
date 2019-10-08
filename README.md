@@ -1,3 +1,14 @@
+# Kibana at Socrata
+
+We use Kibana to monitor [catalog service](https://github.com/socrata/catalog-service)'s
+elastic search cluster as well as [spandex](https://github.com/socrata-platform/spandex)'s
+autocomplete cluster. This repository doesn't contain the source for Kibana. It
+exists so that we can build our own kibana docker image with jenkins for
+deployment to whatever environment.
+
+*NOTE:* everything from this point on is taken from Elastic's public [Kibana
+repository](https://github.com/elastic/kibana).
+
 # Kibana
 
 Kibana is your window into the [Elastic Stack](https://www.elastic.co/products). Specifically, it's a browser-based analytics and search dashboard for Elasticsearch.
