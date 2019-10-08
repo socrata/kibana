@@ -1,0 +1,5 @@
+{
+  "ports": [ 5601 ],
+  "start_container": "bin/start_kibana_docker",
+  "start_process": "bin/start_kibana"
+}
