@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+image="$1"
+
+if [ -z "$image" ]; then
+  echo "ERR >> Please supply a full image name as an argument to this script!"
+  exit 1
+fi
+
+AWS_PROFILE=infrastructure docker run \
+  --network host \
+  -p 5601:5601 \
+  "$image"

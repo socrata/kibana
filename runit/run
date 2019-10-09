@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ ! -z "$MARATHON_APP_ID" ]; then
+    source /dev/shm/kibana-${SERVICE_SUFFIX}-env
+fi
+
+set -ev
+
+if [ ! -z "$MARATHON_APP_ID" ]; then
+    . /bin/set_ark_host
+    /bin/env_parse /etc/service/kibana/config/${CONFIG}.j2
+else
+    echo "" > /etc/service/kibana/config/${CONFIG}
+    rm /etc/service/kibana/config/${CONFIG}.j2
+fi
+
+exec su socrata -c "/etc/service/kibana/bin/kibana"

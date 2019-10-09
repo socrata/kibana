@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+cd $(dirname $BASH_SOURCE[0])
+cd ..
+
+if [ ! -d "src" ]; then
+  ./download_kibana.sh 7.3.0
+  mv kibana/ src/
+fi
+
+cd src
+
+./bin/kibana
