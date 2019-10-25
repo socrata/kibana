@@ -29,3 +29,9 @@ environments, you may want to take a look at
   - there are a few command line arguments that the `kibana` job passes to the
     `dockerize` job that distinguish the spandex and catalog builds
 
+If you are making changes to the docker image, you'll probably want to build a
+local image with this command:
+
+```
+docker build -t "kibana:test_build" --build-arg docker_version=7.3.2 .
+```

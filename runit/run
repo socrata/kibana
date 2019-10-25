@@ -1,7 +1,17 @@
 #!/bin/bash
 
 if [ ! -z "$MARATHON_APP_ID" ]; then
-    source /dev/shm/kibana-${SERVICE_SUFFIX}-env
+
+    if [ -f /dev/shm/kibana-catalog-env ]; then
+        source /dev/shm/kibana-catalog-env
+    elif [ -f /dev/shm/kibana-spandex-env ]; then
+        source /dev/shm/kibana-spandex-env
+    else
+        echo "-----------------------------"
+        echo "ERROR: no clortho file found!"
+        echo "-----------------------------"
+    fi
+
 fi
 
 set -ev
