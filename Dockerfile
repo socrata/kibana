@@ -1,16 +1,14 @@
 FROM socrata/runit-nodejs
 
-# $docker_version and $service_suffix should be passed here using the --build-arg flag
+# $docker_version should be passed here using the --build-arg flag
 # configure this in the dockerize jenkins task with DOCKER_BUILD_ARGS
 ARG docker_version
-ARG service_suffix
 
 # required until runit base image correctly sets ark_host
 ENV ARK_HOST aws-private
 ENV LOG_LEVEL info
 
 ENV APP kibana
-ENV SERVICE_SUFFIX $service_suffix
 ENV KIBANA_SOURCE src
 ENV CONFIG ${APP}.yml
 ENV ROOT_DIR /srv/${APP}/
