@@ -1,4 +1,4 @@
-FROM socrata/runit-nodejs
+FROM socrata/runit-nodejs-bionic-10x
 
 # $docker_version should be passed here using the --build-arg flag
 # configure this in the dockerize jenkins task with DOCKER_BUILD_ARGS
